@@ -1,0 +1,55 @@
+﻿<Window x:Class="Core_Database.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Core_Database"
+        mc:Ignorable="d"
+        Title="Av Gear Core Database Manager" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0" DockPanel.Dock="Top">
+            <Button x:Name="OpenFileButton" Content="Open" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="1,1,1,1" Padding="5,3,5,3" Margin="10,0,0,0" Click="OpenFileButton_Click"/>
+            <Label x:Name="fileLabel" Content="Please open a databse" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+
+            <ListBox x:Name="MainList" Width="100" Background="White" IsEnabled="False" SelectionChanged="MainList_SelectionChanged">
+                <ListBoxItem x:Name="ListBoxItemTool" Content="Tool" FontSize="16"/>
+                <ListBoxItem Content="Connector" FontSize="16"/>
+                <ListBoxItem Content="Contact" FontSize="16"/>
+                <ListBoxItem Content="Wire" FontSize="16"/>
+                <ListBoxItem Content="Material" FontSize="16" />
+            </ListBox>
+            <ListBox x:Name="TypeList0" d:ItemsSource="{d:SampleData ItemCount=25}" MinWidth="100" SelectionChanged="TypeList0_SelectionChanged" FontSize="16">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListBoxItemClick"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+            <ListBox x:Name="TypeList1" d:ItemsSource="{d:SampleData ItemCount=25}" FontSize="16" Visibility="Collapsed"/>
+
+        </StackPanel>
+        <DockPanel DockPanel.Dock="Right" Margin="0,10,10,10" LastChildFill="False" >
+            <ListBox x:Name="ContentList" d:ItemsSource="{d:SampleData ItemCount=20}" FontSize="16" DockPanel.Dock="Top" Background="#FFECFF7C" VerticalContentAlignment="Stretch" ScrollViewer.CanContentScroll="False" UseLayoutRounding="False" IsSynchronizedWithCurrentItem="False" MaxHeight="350" Height="320" SelectionChanged="ContentList_SelectionChanged">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListBoxItemClick"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="CopyButton" Content="Copy" Padding="5,3,5,3" Margin="0,0,15,0" IsEnabled="False" Click="CopyButton_Click" />
+                <Button x:Name="DeleteButton" Content="Delete" Padding="5,3,5,3" Margin="0,0,5,0" IsEnabled="False" Click="DeleteButton_Click" />
+                <Button x:Name="AddButton" Content="Add" Padding="5,3,5,3" Margin="0,0,5,0" Click="Add_Button_Click" IsEnabled="False"/>
+                <Button x:Name="EditButton" Content="Edit" Padding="5,3,5,3" IsEnabled="False" Click="EditButton_Click"/>
+            </StackPanel>
+
+        </DockPanel>
+
+    </DockPanel>
+
+
+</Window>

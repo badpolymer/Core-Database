@@ -1,0 +1,93 @@
+﻿<Window x:Class="Core_Database.ViewsControllers.Editor_For_Tool"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Core_Database.ViewsControllers"
+        mc:Ignorable="d"
+        Title="Data Editor(Tool)" Height="500" Width="800" MinWidth="800" MinHeight="500">
+    <DockPanel>
+        <Border BorderBrush="Black" BorderThickness="1" Width="390" Margin="10,10,10,10" Padding="10,10,10,10">
+            <DockPanel LastChildFill="False">
+                <Image DockPanel.Dock="Top" Height="368" Width="368"/>
+                <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Height="25" >
+                    <Button Content="Replace" Margin="0,0,5,0" Width="52"/>
+                    <Button Content="Previous" Margin="0,0,5,0" Width="54"/>
+                    <Button Content="up" Margin="0,0,5,0" Width="38"/>
+                    <Button Content="Delete" Margin="0,0,5,0" Width="42"/>
+                    <Button Content="down" Margin="0,0,5,0" Width="38"/>
+                    <Button Content="Next" Margin="0,0,5,0" Width="54"/>
+                    <Button Content="Insert" Margin="0,0,0,0" Width="52"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="0,10,10,10" Padding="10,10,10,10">
+            <DockPanel LastChildFill="False">
+                <DockPanel DockPanel.Dock="Top" VerticalAlignment="Center">
+                    <Label Content="Part Number:"/>
+                    <TextBox x:Name="PNTextBox" TextWrapping="Wrap" Text="TextBox"  VerticalAlignment="Center"/>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top" VerticalAlignment="Center" Margin="0,5,0,0" >
+                    <Label Content="Type:"/>
+                    <Button x:Name="AddTypeButton" Content="ADD" DockPanel.Dock="Right" Margin="10,0,0,0" Padding="5,1,5,1" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AddTypeButton_Click" />
+                    <ComboBox x:Name="TypeSelector" VerticalAlignment="Center" />
+                </DockPanel>
+
+                <DockPanel DockPanel.Dock="Top" VerticalAlignment="Center" Margin="5,10,0,5" >
+                    <CheckBox x:Name="IsStandardCheckBox" VerticalAlignment="Center" Content="This is a Specification number" />
+                </DockPanel>
+
+                <DockPanel DockPanel.Dock="Top" >
+
+                    <Label Content="Short Description:" DockPanel.Dock="Top"/>
+                    <Grid DockPanel.Dock="Top" VerticalAlignment="Center" Margin="10,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Name="ShortDescTextBlock" Text="Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample " VerticalAlignment="Center" />
+
+                        <Button x:Name="ShortDescEditButton" DockPanel.Dock="Right" Content="Edit" Padding="5,1,5,1" Grid.Column="1" Margin="10,0,0,0" Click="ShortDescEditButton_Click" />
+                    </Grid>
+                    <DockPanel DockPanel.Dock="Top" Margin="10,0,0,0" >
+                        <CheckBox x:Name="ShortlDescENUKCheckBox" Content="ENUK" IsEnabled="False"/>
+                        <CheckBox x:Name="ShortDescCTNCheckBox" Content="CTN" Margin="5,0,0,0" IsEnabled="False"/>
+                        <CheckBox x:Name="ShortDescTMDRCheckBox" Content="TMDR" Margin="5,0,0,0" IsEnabled="False"/>
+                        <CheckBox x:Name="ShortDescSMDRCheckBox" Content="SMDR" Margin="5,0,0,0" IsEnabled="False"/>
+                    </DockPanel>
+                </DockPanel>
+
+                <DockPanel DockPanel.Dock="Top" Margin="0,5,0,0" >
+
+                    <Label Content="Detail Description:" DockPanel.Dock="Top"/>
+                    <Grid DockPanel.Dock="Top" VerticalAlignment="Center" Margin="10,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Name="DetailDescTextBlock" Text="Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample " VerticalAlignment="Center" />
+
+                        <Button x:Name="DetailDescEditButton" DockPanel.Dock="Right" Content="Edit" Padding="5,1,5,1" Grid.Column="1" Margin="10,0,0,0" />
+                    </Grid>
+                    
+                    <DockPanel DockPanel.Dock="Top" Margin="10,0,0,0" >
+                        <CheckBox x:Name="DetailDescENUKCheckBox" Content="ENUK" IsEnabled="False"/>
+                        <CheckBox x:Name="DetailDescCTNCheckBox" Content="CTN" Margin="5,0,0,0" IsEnabled="False"/>
+                        <CheckBox x:Name="DetailDescTMDRCheckBox" Content="TMDR" Margin="5,0,0,0" IsEnabled="False"/>
+                        <CheckBox x:Name="DetailDescSMDRCheckBox" Content="SMDR" Margin="5,0,0,0" IsEnabled="False"/>
+                    </DockPanel>
+
+                </DockPanel>
+
+                <DockPanel DockPanel.Dock="Bottom" LastChildFill="False" Height="25" >
+                    <Button x:Name="DeleteButton" Content="Delete" Width="NaN" Margin="5,0,5,0" Padding="5,1,5,1" Click="DeleteButton_Click"/>
+                    <Button x:Name="CancelButton" Content="Cancel" Width="50" Margin="5,0,5,0" Padding="5,1,5,1" DockPanel.Dock="Right" Click="CancelButton_Click"/>
+                    <Button x:Name="SaveButton" Content="Save" Width="NaN" Margin="5,0,5,0" DockPanel.Dock="Right" Padding="5,1,5,1" Click="SaveButton_Click"/>
+                </DockPanel>
+            </DockPanel>
+        </Border>
+    </DockPanel>
+
+</Window>

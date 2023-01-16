@@ -1,0 +1,21 @@
+﻿<Window x:Class="Core_Database.ViewsControllers.Add_Tool_Main_Type"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Core_Database.ViewsControllers"
+        mc:Ignorable="d"
+        Title="Main Type Editor" Height="400" Width="400">
+    <DockPanel LastChildFill="False">
+        <DockPanel DockPanel.Dock="Top" Height="25" Margin="10,10,10,0">
+            <Label Content="Type Name:" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="TypeNameTextBox" TextWrapping="Wrap" Text="TextBox" VerticalContentAlignment="Center"/>
+        </DockPanel>
+        <DockPanel LastChildFill="False"  DockPanel.Dock="Bottom" Height="25" Margin="10,0,10,10">
+            <Button x:Name="DeleteButton" Content="Delete" Padding="5,1,5,1" IsEnabled="False"/>
+            <Button x:Name="CancelButton" Content="Cancel"  DockPanel.Dock="Right" Padding="5,1,5,1" Click="CancelButton_Click"/>
+            <Button x:Name="SaveButton" Content="Save"  DockPanel.Dock="Right" Margin="0,0,10,0" Padding="5,1,5,1" Click="SaveButton_Click"/>
+        </DockPanel>
+    </DockPanel>
+
+</Window>
